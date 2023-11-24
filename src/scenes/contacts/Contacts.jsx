@@ -6,11 +6,6 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 //  Data
 import { mockDataContacts } from "../../data/mockData";
 
-// Icons
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-
 // components
 import Header from "../../components/Header";
 
