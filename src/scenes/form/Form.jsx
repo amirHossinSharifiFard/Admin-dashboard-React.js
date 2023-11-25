@@ -28,7 +28,7 @@ const checkoutSchema = yup.object().shape({
 });
 
 const Form = () => {
-  const isNonMobile = useMediaQuery("(max-with:600px)");
+  const isNonMobile = useMediaQuery("(min-width:600px)");
 
   const handleFormSubmit = (values) => {
     console.log(values);
@@ -134,6 +134,11 @@ const Form = () => {
                 helperText={touched.address2 && errors.address2}
                 sx={{ gridColumn: "span 4" }}
               />
+            </Box>
+            <Box display='flex' justifyContent='end' mt='20px'>
+              <Button type="submit" color="secondary" variant="contained">
+                creat New User
+              </Button>
             </Box>
           </form>
         )}
