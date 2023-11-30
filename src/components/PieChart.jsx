@@ -8,7 +8,7 @@ import { mockPieData as data } from "../data/mockData";
 
 const PieChart = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palettemide);
+  const colors = tokens(theme.palette.mode);
   return (
     <ResponsivePie
       data={data}
@@ -32,7 +32,7 @@ const PieChart = () => {
             storkeWidth: 1
           },
           text: {
-            fill: colors.grey[100]
+            fill: colors.grey[900]
           }
         }
       }}
@@ -47,7 +47,7 @@ const PieChart = () => {
         modifiers: [["darker", 0.2]]
       }}
       arcLinkLabelsSkipAngle={10}
-      arcLinkLabelsTextColor={colors.grey[600]}
+      arcLinkLabelsTextColor={colors.grey[100]}
       arcLinkLabelsThickness={2}
       arcLinkLabelsColor={{ from: "color" }}
       enableArcLabels={false}
@@ -96,7 +96,7 @@ const PieChart = () => {
             {
               on: "hover",
               style: {
-                itemTextColor: "#000"
+                itemTextColor: colors.grey[100]
               }
             }
           ]

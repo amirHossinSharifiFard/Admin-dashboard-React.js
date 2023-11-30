@@ -5,42 +5,46 @@ import { ResponsiveBar } from "@nivo/bar";
 
 // inja mockBarData ro be name data import mikonim
 import { mockBarData as data } from "../data/mockData";
-import { colors } from "@mui/material";
 
 const BarChart = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palettemide);
+  const colors = tokens(theme.palette.mode);
   return (
     <ResponsiveBar
       data={data}
       theme={{
-        // add
+        // added
         axis: {
           domain: {
             line: {
-              stork: colors.grey[100]
-            }
-          }
-        },
-        legend: {
-          text: {
-            fill: colors.grey[100]
-          }
-        },
-        ticks: {
-          line: {
-            storke: colors.grey[100],
-            storkeWidth: 1
+              stroke: colors.grey[100],
+            },
           },
+          legend: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1,
+            },
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+        },
+        legends: {
           text: {
-            fill: colors.grey[100]
-          }
-        }
+            fill: colors.grey[100],
+          },
+        },
       }}
       keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-      indexBy='country'
+      indexBy="country"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-      padding={0.5}
+      padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
       colors={{ scheme: "nivo" }}
@@ -52,7 +56,7 @@ const BarChart = () => {
           color: "#38bcb2",
           size: 4,
           padding: 1,
-          stagger: true
+          stagger: true,
         },
         {
           id: "lines",
@@ -61,8 +65,8 @@ const BarChart = () => {
           color: "#eed312",
           rotation: -45,
           lineWidth: 6,
-          spacing: 10
-        }
+          spacing: 10,
+        },
       ]}
       fill={[
         {

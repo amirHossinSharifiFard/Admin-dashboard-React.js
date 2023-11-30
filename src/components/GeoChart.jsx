@@ -16,22 +16,32 @@ const GeoChart = ({ isDashbpoard = false }) => {
         axis: {
           domain: {
             line: {
-              stork: colors.grey[100]
+              stroke: colors.grey[100]
             }
-          }
-        },
-        legend: {
-          text: {
-            fill: colors.grey[100]
-          }
-        },
-        ticks: {
-          line: {
-            storke: colors.grey[100],
-            storkeWidth: 1
           },
-          text: {
-            fill: colors.grey[100]
+          legend: {
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1
+            },
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+        },
+          legends: {
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+        tooltip: {
+          container: {
+            color: colors.primary[500]
           }
         }
       }}

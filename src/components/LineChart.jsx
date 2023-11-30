@@ -4,7 +4,7 @@ import { tokens } from "../theme";
 import { mockLineData as data } from "../data/mockData";
 import { useTheme } from "@mui/material";
 
-const LineChart = ({ isDahsboard = false }) => {
+const LineChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -15,22 +15,32 @@ const LineChart = ({ isDahsboard = false }) => {
         axis: {
           domain: {
             line: {
-              stork: colors.grey[100]
+              stroke: colors.grey[100]
             }
-          }
-        },
-        legend: {
-          text: {
-            fill: colors.grey[100]
-          }
-        },
-        ticks: {
-          line: {
-            storke: colors.grey[100],
-            storkeWidth: 1
           },
-          text: {
-            fill: colors.grey[100]
+          legend: {
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1
+            },
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+        },
+          legends: {
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+        tooltip: {
+          container: {
+            color: colors.primary[500]
           }
         }
       }}
@@ -51,7 +61,7 @@ const LineChart = ({ isDahsboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDahsboard ? undefined : "transportation",
+        legend: isDashboard ? undefined : "transportation",
         legendOffset: 36,
         legendPosition: "middle"
       }}
@@ -59,11 +69,14 @@ const LineChart = ({ isDahsboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDahsboard ? undefined :"count",
+        legend: isDashboard ? undefined : "count",
         legendOffset: -40,
-        legendPosition: "middle"
+        legendPosition: "middle",
+        color: "red"
       }}
       enableGridX={false}
+      enableGridY={false}
+      enableCrosshair={false}
       enablePoints={false}
       pointSize={10}
       pointColor={{ theme: "background" }}
@@ -85,7 +98,7 @@ const LineChart = ({ isDahsboard = false }) => {
           itemOpacity: 0.75,
           symbolSize: 12,
           symbolShape: "circle",
-          symbolBorderColor: "rgba(0, 0, 0, .5)",
+          symbolBorderColor: ["rgba(90,90,90, .5)"],
           effects: [
             {
               on: "hover",
